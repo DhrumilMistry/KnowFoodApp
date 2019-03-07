@@ -1,44 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
+    android:id="@+id/constraintLayoutParent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/relativeLayoutParent"
+    android:orientation="horizontal"
     tools:context=".SignUpActivity">
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:cropToPadding="false"
-        tools:srcCompat="@tools:sample/backgrounds/scenic[9]" />
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="290dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/startimage" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/imageView3"
-        android:gravity="bottom"
-        android:orientation="horizontal">
+    <Button
+        android:id="@+id/btnSignUp"
+        android:layout_width="176dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Sign Up"
+        android:textColor="@color/colorAppBGColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnSignIn"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <Button
-            android:id="@+id/btnSignUp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_weight="1"
-            android:text="Sign Up" />
+    <Button
+        android:id="@+id/btnSignIn"
+        android:layout_width="169dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@android:color/white"
+        android:text="Log In"
+        android:textColor="@color/colorAppBGColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnSignUp" />
 
-        <Button
-            android:id="@+id/btnSignIn"
-            android:layout_weight="1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_toEndOf="@+id/btnSignUp"
-            android:text="Log In" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="0dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="sans-serif"
+        android:text="KnowFood lets you easily identify the food item in front of you and its nutrition information as well. Sign up if you are a new user or log in if you're already one and start knowing more about your food!"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>
