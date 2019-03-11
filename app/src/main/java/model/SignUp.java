@@ -11,7 +11,7 @@ public class SignUp {
     public boolean isSynced;
     public String DateCreated;
 
-    public SignUp(long id,String emailid,String password, String date, boolean isActive, boolean isSynced){
+    public SignUp(long id, String emailid, String password, String date, boolean isActive, boolean isSynced){
         this.Id = id;
         this.EmailId = emailid;
         this.Password = password;

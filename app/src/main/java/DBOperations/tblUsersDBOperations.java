@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 import helpers.SignUpDBHelper;
+import model.Login;
 import model.SignUp;
 
 public class tblUsersDBOperations {
@@ -42,6 +43,4 @@ public class tblUsersDBOperations {
         else
             return true;
     }
-
-
 }

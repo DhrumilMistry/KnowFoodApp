@@ -3,6 +3,7 @@ package com.example.knowfoodapp;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -28,9 +29,13 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import DBOperations.LoginDBOperations;
+import model.SignUp;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -43,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-
+    private LoginDBOperations loginDBOperations;
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
@@ -90,6 +95,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             }
         });
 
+        loginDBOperations = new LoginDBOperations(this);
         mLoginFormView = findViewById(R.id.login_form);
         mProgressView = findViewById(R.id.login_progress);
     }
@@ -184,9 +190,17 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
-            mAuthTask = new UserLoginTask(email, password);
-            mAuthTask.execute((Void) null);
+            //showProgress(true);
+            //mAuthTask = new UserLoginTask(email, password);
+            //mAuthTask.execute((Void) null);
+            SignUp user = loginDBOperations.queryUser(email,password);
+            if(user!=null) {
+                Intent intent = new Intent(LoginActivity.this, GetStartedActivity.class);
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(LoginActivity.this,"Oops! Something went wrong. Please try again.",Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
