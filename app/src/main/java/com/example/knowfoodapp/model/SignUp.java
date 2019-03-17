@@ -1,7 +1,4 @@
-package model;
-
-import java.sql.Timestamp;
-import java.util.Date;
+package com.example.knowfoodapp.model;
 
 public class SignUp {
     public long Id;

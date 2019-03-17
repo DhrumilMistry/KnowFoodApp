@@ -11,9 +11,9 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import helpers.SignUpDBHelper;
-import model.SignUp;
-import DBOperations.tblUsersDBOperations;
+import com.example.knowfoodapp.helpers.SignUpDBHelper;
+import com.example.knowfoodapp.model.SignUp;
+import com.example.knowfoodapp.DBOperations.tblUsersDBOperations;
 
 public class UserSignUpActivity extends AppCompatActivity {
     private Button btnSignUp;

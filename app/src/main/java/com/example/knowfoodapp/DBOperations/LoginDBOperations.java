@@ -1,13 +1,12 @@
-package DBOperations;
+package com.example.knowfoodapp.DBOperations;
 
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import helpers.LoginDBHelper;
-import model.Login;
-import model.SignUp;
+import com.example.knowfoodapp.helpers.LoginDBHelper;
+import com.example.knowfoodapp.model.SignUp;
 
 public class LoginDBOperations {
     SQLiteOpenHelper dbHandler;

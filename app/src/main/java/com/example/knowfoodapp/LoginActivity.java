@@ -34,8 +34,8 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-import DBOperations.LoginDBOperations;
-import model.SignUp;
+import com.example.knowfoodapp.DBOperations.LoginDBOperations;
+import com.example.knowfoodapp.model.SignUp;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -193,13 +193,12 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             //showProgress(true);
             //mAuthTask = new UserLoginTask(email, password);
             //mAuthTask.execute((Void) null);
-            SignUp user = loginDBOperations.queryUser(email,password);
-            if(user!=null) {
+            SignUp user = loginDBOperations.queryUser(email, password);
+            if (user != null) {
                 Intent intent = new Intent(LoginActivity.this, GetStartedActivity.class);
                 startActivity(intent);
-            }
-            else{
-                Toast.makeText(LoginActivity.this,"Oops! Something went wrong. Please try again.",Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(LoginActivity.this, "Oops! Something went wrong. Please try again.", Toast.LENGTH_SHORT).show();
             }
         }
     }

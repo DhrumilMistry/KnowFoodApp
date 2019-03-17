@@ -1,6 +1,4 @@
-package model;
-
-import com.example.knowfoodapp.UserSignUpActivity;
+package com.example.knowfoodapp.model;
 
 public class Login {
     public String Username;
